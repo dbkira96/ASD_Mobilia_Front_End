@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "mobilia"
+  "defaultProject": "mobilia",
+  "cli": {
+    "analytics": "fbbd3988-d921-4a36-8a72-d6863f14a040"
+  }
 }
