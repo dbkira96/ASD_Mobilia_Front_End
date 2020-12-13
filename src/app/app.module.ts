@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { ProductsComponent } from './products/products.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 
@@ -20,7 +21,8 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
       LoginComponent,
       ErrorComponent,
       ProductsComponent,
-      BoardAdminComponent
+      BoardAdminComponent,
+      HomePageComponent
    ],
   imports: [
     BrowserModule,
