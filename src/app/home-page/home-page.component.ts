@@ -20,6 +20,9 @@ export class HomePageComponent implements OnInit {
     var products = [product1,product2,product3];
     //this.getProductByName(products,"tavolo");
     //this.getProductsByCategoryAndSubCategory(products,"arredamento","cucina");
+    console.log(product1.quantity);
+    product1.setQuantity(45);
+    console.log(product1.quantity);
 
     
   }
@@ -77,6 +80,17 @@ export class HomePageComponent implements OnInit {
     this.scaffale=scaffale;
     this.quantity = quantity; 
   }
+
+  setName(name:string){
+    this.name = name
+  }
+  setScaffale(scaffale:string){
+    this.scaffale = scaffale
+  }
+  setQuantity(quantity:number){
+    this.quantity = quantity
+  }
+
 
   
 
