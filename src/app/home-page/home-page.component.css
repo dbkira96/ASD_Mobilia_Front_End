@@ -1,0 +1,15 @@
+.home-card{
+    max-width: 400px;
+    margin: 5pt;
+}
+.card-search{
+    background-color: blueviolet;
+}
+.main-div{
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
