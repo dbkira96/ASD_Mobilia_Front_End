@@ -1,5 +1,7 @@
 import { Identifiers } from '@angular/compiler';
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -9,6 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
    Products: Array<Product> = [];
+   str = "hello"
+   
+   
 
   constructor() { }
 
@@ -17,14 +22,32 @@ export class HomePageComponent implements OnInit {
     var product1 = new Product(1,"sedia","arredamento","cucina","A-2",20)
     var product2 = new Product(2,"tavolo","arredamento","cucina","B-4",30)
     var product3 = new Product(3,"vaso","arredamento","salotto","C-8",40)
-    var products = [product1,product2,product3];
+    this.Products = [product1,product2,product3];
+    
     //this.getProductByName(products,"tavolo");
     //this.getProductsByCategoryAndSubCategory(products,"arredamento","cucina");
-    console.log(product1.quantity);
-    product1.setQuantity(45);
-    console.log(product1.quantity);
 
+    //creo lista di prodotti sulla pagina html
+
+    this.str = this.generateProductsList(this.Products);
+    document.getElementById("divProduct")?.insertAdjacentHTML("afterend",this.str);
     
+  }
+
+
+  generateProductsList(products:Array<Product>):string{
+    var str = '<ul>'
+    for(var i = 0;i<products.length;i++)
+    {
+      str+='<li>' + products[i].name + '</li>';
+      str+='<li>' + products[i].quantity + '</li>';
+      str+='<li>' + products[i].category + '</li>';
+      str+='<li>' + products[i].subcategory + '</li>';
+      str+='<li>'+'</li>';
+    }
+    str+= '</ul>';
+    return str;
+
   }
 
   getAllProducts(products:Array<Product>): void{
